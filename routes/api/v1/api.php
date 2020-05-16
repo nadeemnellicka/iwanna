@@ -18,7 +18,14 @@ use Illuminate\Http\Request;
 // });
 Route::prefix('/user')->group( function() {
 Route::post('/login','api\user\LoginController@login');
+Route::post('/register','api\user\LoginController@register');
 });
+
+Route::prefix('/user')->middleware('auth:api')->group( function() {
+Route::get('/details','api\user\LoginController@details');
+Route::post('logout','api\user\LoginController@logout');
+});
+
 
 // Route::prefix('/user')->middleware('auth:api')->group( function() {
 Route::prefix('/user')->group( function() {
