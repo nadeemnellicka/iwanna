@@ -15,7 +15,7 @@ return [
     |
     */
 
-    'paths' => ['api/v1/api/*'],
+    'paths' => ['api/*'],
 
     'allowed_methods' => ['*'],
 
